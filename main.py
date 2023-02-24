@@ -4,7 +4,7 @@ import requests
 from aiogram import Bot, Dispatcher, types
 from aiogram import Bot, Dispatcher, executor, types
 
-bot_token = ''
+bot_token = '' #@Bot_Father
 
 bot = Bot(token=bot_token)
 
@@ -18,7 +18,7 @@ async def start(message: types.Message):
 async def search_car(message: types.Message):
     car_number = message.text.upper()
 
-    key = ""
+    key = "" # Апи-ключ на 1000 запросов - https://baza-gai.com.ua/api
     url = f"https://baza-gai.com.ua/nomer/{car_number}"
     headers = {"Accept": "application/json", "X-Api-Key": key}
     response = requests.get(url, headers=headers)
